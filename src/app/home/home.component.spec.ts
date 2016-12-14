@@ -1,18 +1,26 @@
 /* tslint:disable:no-unused-variable */
 
-import { TestBed, async } from '@angular/core/testing';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { TestBed, ComponentFixture, async } from '@angular/core/testing';
 import { HomeComponent } from './home.component';
 
-const TITLE: string = 'Welcome! App works!';
+const TITLE: string = 'Welcome, dudes!';
 
 describe('#Home page', () => {
+    let fixture: ComponentFixture<HomeComponent>;
+
     beforeEach(() => {
-        TestBed.configureTestingModule({
-            declarations: [
-                HomeComponent
-            ],
+        return TestBed.configureTestingModule({
+            schemas: [CUSTOM_ELEMENTS_SCHEMA],
+            declarations: [HomeComponent]
+        }).compileComponents().then(() => {
+            fixture = TestBed.createComponent(HomeComponent);
+            fixture.detectChanges();
         });
-        TestBed.compileComponents();
+    });
+
+    afterEach(() => {
+        fixture.destroy();
     });
 
     it('should create the home page', async(() => {

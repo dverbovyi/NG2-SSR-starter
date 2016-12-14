@@ -5,8 +5,6 @@ import { AppModuleNgFactory } from '../aot/src/app/app.module.ngfactory';
 
 import { ConfigService } from './app';
 
-import './assets/styles/global.scss';
-
 function RunApplication(): void {
 
   const injector = ReflectiveInjector.resolveAndCreate([, ConfigService]),

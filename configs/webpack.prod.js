@@ -6,6 +6,7 @@ const metadata = require('./metadata');
 /**
  * Webpack Plugins
  */
+const AotPlugin = require('@ngtools/webpack').AotPlugin;
 const DefinePlugin = require('webpack/lib/DefinePlugin');
 const LoaderOptionsPlugin = require('webpack/lib/LoaderOptionsPlugin');
 const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
@@ -20,10 +21,10 @@ const PORT = process.env.PORT || 4000;
 const METADATA = webpackMerge(metadata, {}); //add overwritten fields
 
 module.exports = function (env) {
-  return webpackMerge(commonConfig({env: ENV}), {
+  return webpackMerge(commonConfig({ env: ENV }), {
 
-    entry:  webpackMerge(metadata.entry, {
-      main: './src/boot.aot.ts'
+    entry: webpackMerge(metadata.entry, {
+      main: './src/boot.ts'
     }),
 
     /**
@@ -80,6 +81,11 @@ module.exports = function (env) {
      * See: http://webpack.github.io/docs/configuration.html#plugins
      */
     plugins: [
+
+      new AotPlugin({
+        tsConfigPath: './tsconfig.aot.json',
+        entryModule: 'src/app/app.module#AppModule'
+      }),
 
       /**
        * Plugin: WebpackMd5Hash

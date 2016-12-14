@@ -3,11 +3,9 @@ import { enableProdMode } from '@angular/core';
 
 import { DEV, PROD } from '../environments';
 
-// Environment Providers
 export const AppProviders: any[] = [];
 
 if ('production' === ENV) {
-  // Production
   disableDebugTools();
   enableProdMode();
 
@@ -16,7 +14,6 @@ if ('production' === ENV) {
   );
 
 } else {
-  // Development
   AppProviders.push(
     { provide: 'EnvAPIConfig', useValue: DEV }
   )
