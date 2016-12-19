@@ -63,15 +63,19 @@ To run tests in watch mode:
 
 * `npm run build:prod` - build atrifacts using prod configuration;
 
-* `npm run clean:dist` - to clean "public" and "coverage" report folders;
+* `npm run clean:dist` - to clean "dist" folder;
 
-* `npm run clean` - clean npm cache and remove "public", "coverage", "node_modules" folders;
+* `npm run clean:aot` - remove ngc generated files 
 
-* `npm test` - run unit tests/
+* `npm test` - run unit tests
 
 * `npm run watch:dev` - observe files changes and build artifacts using dev configuration;
 
 * `npm run watch:prod` - observe files changes and build artifacts using prodd configuration;
 
 * `npm run watch:test` - observe files changes and run unit tests
+
+* `npm run server:dev` - build artifacts using dev configuration and start express server
+
+* `npm run server:prod` - build artifacts using prod configuration and start express server
 	
