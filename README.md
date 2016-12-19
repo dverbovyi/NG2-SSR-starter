@@ -1,4 +1,4 @@
-# TRU-POC-NG2
+# NG2-starter
 
 Angular 2 starter app with server-side rendering using Angular Universal, Express, TypeScript language, Webpack 2, Karma, Jasmine
 
