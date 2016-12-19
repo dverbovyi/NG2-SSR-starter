@@ -1,27 +1,21 @@
-<!DOCTYPE html>
-<html lang="">
+<!doctype html>
+<html>
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <title>Angular 2 Universal Starter</title>
+  <meta name="description" content="Ng2-tru-poc">
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title><%= htmlWebpackPlugin.options.title %></title>
+  <link rel="prerender" href="http://localhost:3000/lazy">
+  <base href="/">
 
-  <meta name="description" content="<%= htmlWebpackPlugin.options.title %>">
-
-  <base href="<%= htmlWebpackPlugin.options.metadata.baseUrl %>">
 </head>
-
 <body>
 
-  <app-root>
-    Loading...
-  </app-root>
+  <app>
+    Loading Universal ...
+  </app>
 
-  <% if (htmlWebpackPlugin.options.metadata.isDevServer) { %>
-  <!-- Webpack Dev Server reload -->
-  <script src="/webpack-dev-server.js"></script>
-  <% } %>
-
+  <script async src="/main.bundle.js"></script>
 </body>
 </html>

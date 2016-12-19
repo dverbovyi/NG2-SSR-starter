@@ -1,3 +1,7 @@
+import 'rxjs/add/observable/throw';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+
 import { Injectable, Injector } from '@angular/core';
 import { Http, URLSearchParams } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
@@ -5,7 +9,7 @@ import { Observable } from 'rxjs/Observable';
 import { Helpers } from './helpers';
 
 @Injectable()
-export class APIService {
+export class ApiService {
     protected config: any;
     protected subscribtions: any = {};
 
@@ -14,11 +18,11 @@ export class APIService {
         protected helpers: Helpers,
         protected injector: Injector
     ) {
-        this.config = injector.get('APIConfig') || injector.get('EnvAPIConfig');
+        this.config = injector.get('ApiConfig');
     }
 
     public get(url: string, params?: URLSearchParams): Observable<any> {
-        this.cancelRequest(url);
+        this._cancelRequest(url);
 
         return this.http.get(url, {
             search: params
@@ -28,7 +32,7 @@ export class APIService {
     }
 
     public post(url: string, body?: Object): Observable<any> {
-        this.cancelRequest(url);
+        this._cancelRequest(url);
 
         return this.http.post(url, body)
             .map(this.extractData.bind(this))
@@ -36,7 +40,7 @@ export class APIService {
     }
 
     public put(url: string, body?: Object): Observable<any> {
-        this.cancelRequest(url);
+        this._cancelRequest(url);
 
         return this.http.put(url, body)
             .map(this.extractData.bind(this))
@@ -46,7 +50,7 @@ export class APIService {
     public delete(url: string, id: string): Observable<any> {
         let _url = `${url}/${id}`;
 
-        this.cancelRequest(_url);
+        this._cancelRequest(_url);
 
         return this.http.delete(_url)
             .map(this.extractData.bind(this))
@@ -88,7 +92,7 @@ export class APIService {
         return `${h}/${b}${v}${resource}`;
     }
 
-    private cancelRequest(url: string): void {
+    private _cancelRequest(url: string): void {
         if (this.subscribtions[url])
             this.subscribtions[url].unsubscribe();
     }

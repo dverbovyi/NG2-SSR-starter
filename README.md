@@ -1,4 +1,4 @@
-# NG2-TRU-POC
+# TRU-POC-NG2
 
 Angular 2 TRU POC project
 
@@ -17,23 +17,23 @@ install dependencies
 
 	npm i
 	
-start dev-server
+build **DEV** configuration and start server
 
 	npm start
 	//or
-	npm run devserver
+	npm run server:dev
 	
-The application is available on `http://localhost:8080`.
+The application is available on **http://localhost:3000**.
 	
 ### Building atrifacts
 
-To build artifacts using `dev` configuration use:
+All artifacts available in **/dist**	folder at root directory.
 
-	npm build
-	//or
-	npm run build:dev
+To build artifacts using **DEV** configuration use:
+
+	npm build:dev
 	
-To specify prod configuration use:
+To specify **PROD** configuration use:
 
 	npm run build:prod
 		
@@ -43,7 +43,6 @@ If you want to build in watch mode you can use
 	//or
 	npm run watch:prod
 	
-The artifacts available in `/public`	folder at root directory.
 
 ### Dependencies
 
@@ -61,9 +60,7 @@ To run tests in watch mode:
 	
 ### All available CLI commands
 
-* `npm run devserver` or `npm start` - start wepback dev-server;
-
-* `npm run build:dev` or `npm run build` - build artifacts using dev configuration;
+* `npm run build:dev` - build artifacts using dev configuration;
 
 * `npm run build:prod` - build atrifacts using prod configuration;
 

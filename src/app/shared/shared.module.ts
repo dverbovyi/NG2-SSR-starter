@@ -1,20 +1,15 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpModule } from '@angular/http';
-import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
-import { NoContentComponent } from './components/no-content';
-import { APIService, ConfigService, Helpers } from './services';
+import { ApiService, Helpers } from './services';
 
 const MODULES = [
+  // Do NOT include UniversalModule, HttpModule, or JsonpModule here
   CommonModule,
   RouterModule,
   FormsModule,
-  BrowserModule,
-  ReactiveFormsModule,
-  HttpModule
+  ReactiveFormsModule
 ];
 
 const PIPES = [
@@ -22,23 +17,26 @@ const PIPES = [
 ];
 
 const COMPONENTS = [
-    NoContentComponent
+  // put shared components here
 ];
 
 const PROVIDERS = [
-  APIService,
-  ConfigService,
+  ApiService,
   Helpers
 ]
 
 @NgModule({
-  imports: [],
+  imports: [
+    ...MODULES
+  ],
   declarations: [
     ...PIPES,
     ...COMPONENTS
   ],
   exports: [
-    ...MODULES
+    ...MODULES,
+    ...PIPES,
+    ...COMPONENTS
   ]
 })
 export class SharedModule {
@@ -48,6 +46,6 @@ export class SharedModule {
       providers: [
         ...PROVIDERS
       ]
-    }
+    };
   }
 }

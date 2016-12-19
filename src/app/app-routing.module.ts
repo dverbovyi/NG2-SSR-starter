@@ -1,16 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { NoContentComponent } from './shared/components/no-content';
+export function getLazyModule() {
+  return System.import('./lazy/lazy.module' + (process.env.AOT ? '.ngfactory' : ''))
+    .then(mod => mod[(process.env.AOT ? 'LazyModuleNgFactory' : 'LazyModule')]);
+}
 
 @NgModule({
-    imports: [
-        RouterModule.forRoot([
-            { path: '**', component: NoContentComponent, pathMatch: 'full' }
-        ])
-    ],
-    exports: [
-        RouterModule
-    ]
+  imports: [
+    RouterModule.forChild([
+      { path: '', redirectTo: '/home', pathMatch: 'full' },
+      { path: 'lazy', loadChildren: getLazyModule }
+    ])
+  ],
 })
 export class AppRoutingModule { }

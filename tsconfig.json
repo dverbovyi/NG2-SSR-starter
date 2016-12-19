@@ -1,39 +1,27 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
-    "moduleResolution": "node",
+    "declaration": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "allowSyntheticDefaultImports": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "outDir": "dist",
     "sourceMap": true,
+    "sourceRoot": "src",
     "noEmitHelpers": true,
-    "strictNullChecks": false,
-    "baseUrl": "./src",
-    "defaultExtension": "ts",
-    "paths": {
-    },
-    "lib": [
-      "dom",
-      "es6"
+    "target": "es5",
+    "typeRoots": [
+      "node_modules/@types"
     ],
-    "types": [
-      "jasmine",
-      "node",
-      "source-map",
-      "uglify-js",
-      "webpack"
-    ]
+    "lib": ["es6", "dom"]
   },
   "exclude": [
-    "node_modules",
-    "dist"
+    "node_modules"
   ],
-  "awesomeTypescriptLoaderOptions": {
-    "forkChecker": true,
-    "useWebpackText": true
+  "angularCompilerOptions": {
+    "debug": false
   },
-  "compileOnSave": true,
-  "buildOnSave": true,
+  "compileOnSave": false,
+  "buildOnSave": false,
   "atom": { "rewriteTsconfig": false }
 }

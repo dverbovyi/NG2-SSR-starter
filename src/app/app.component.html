@@ -1,1 +1,14 @@
-<router-outlet></router-outlet>
+<h1>{{ header }}</h1>
+<nav>
+    <a routerLinkActive="router-link-active" routerLink="home">Home</a>
+    <a routerLinkActive="router-link-active" routerLink="about">About</a>
+    <a routerLinkActive="router-link-active" routerLink="todo">Todo</a>
+    <a routerLinkActive="router-link-active" routerLink="lazy">Lazy</a>
+</nav>
+<br> Two-way binding: <input type="text" [value]="title" (input)="title = $event.target.value">
+
+<span>binding test {{ title }}!</span>
+
+<main>
+    <router-outlet></router-outlet>
+</main>

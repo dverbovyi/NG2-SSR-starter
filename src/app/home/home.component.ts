@@ -1,9 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
 
 @Component({
-    template: require('./home.component.html'),
-    styles: [require('./home.component.scss')]
+  selector: 'home',
+  template: '<h3>{{title}}</h3>'
 })
 export class HomeComponent {
-    public title: string = 'Welcome, dudes!';
+  public title: string = 'Home Component';
 }

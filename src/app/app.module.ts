@@ -1,26 +1,27 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
-import { HomeModule } from './home';
-import { SharedModule } from './shared';
+import { HomeModule } from './home/home.module';
+import { AboutModule } from './about/about.module';
+import { TodoModule } from './todo/todo.module';
+
+import { SharedModule } from './shared/shared.module';
+
 import { AppRoutingModule } from './app-routing.module';
-
 import { AppComponent } from './app.component';
-import { AppProviders } from './app.providers';
+
 
 @NgModule({
   declarations: [ AppComponent ],
-  providers: [
-    ...AppProviders
-  ],
   imports: [
     SharedModule,
     HomeModule,
-    AppRoutingModule,
-    SharedModule.forRoot()
-  ],
-  bootstrap: [AppComponent]
+    AboutModule,
+    TodoModule,
+    AppRoutingModule
+  ]
 })
-export class AppModule {}
+export class AppModule {
+}
 
-export * from './shared/services/config.service';
-
+export { AppComponent } from './app.component';

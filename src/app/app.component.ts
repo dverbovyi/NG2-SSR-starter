@@ -1,9 +1,10 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, Directive, ElementRef, Renderer, ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
 
 @Component({
-    encapsulation: ViewEncapsulation.None,
-    selector: 'app-root',
-    template: require('./app.component.html'),
-    styles: [require('./app.component.scss')]
+  selector: 'app',
+  templateUrl: './app.component.html'
 })
-export class AppComponent {}
+export class AppComponent {
+  public header: string = 'Welcome dudes!'
+  public title = 'type something';
+}
