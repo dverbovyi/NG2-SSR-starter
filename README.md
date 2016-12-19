@@ -1,6 +1,6 @@
 # TRU-POC-NG2
 
-Angular 2 starter app with server-side rendering using Angular Universal, TypeScript, Webpack 2, Karma, Jasmine
+Angular 2 starter app with server-side rendering using Angular Universal, Express, TypeScript, Webpack 2, Karma, Jasmine
 
 ## How do I get set up?
 
