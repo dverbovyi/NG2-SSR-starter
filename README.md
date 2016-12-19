@@ -1,6 +1,6 @@
 # TRU-POC-NG2
 
-Angular 2 TRU POC project
+Angular 2 starter app with server-side rendering using Angular Universal, TypeScript, Webpack 2, Karma, Jasmine
 
 ## How do I get set up?
 
@@ -76,22 +76,3 @@ To run tests in watch mode:
 
 * `npm run watch:test` - observe files changes and run unit tests
 	
-### Deployment instructions
-
-Pickup artifacts at `/public` folder.
-
-//TODO
-
-## Contribution guidelines
-
-* Writing tests
-* Code review
-* Other guidelines
-
-//TODO
-
-## Who do I talk to?
-
-* Team contact
-
-**skype**: depressedmode (Dmytro Verbovyi)
