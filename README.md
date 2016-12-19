@@ -8,7 +8,6 @@ Angular 2 starter app with server-side rendering using Angular Universal, TypeSc
 * Building atrifacts
 * Dependencies
 * How to run tests
-* Deployment instructions
 * All available CLI commands
 
 ### Summary of set up
