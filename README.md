@@ -94,4 +94,4 @@ Pickup artifacts at `/public` folder.
 
 * Team contact
 
-//TODO
+**skype**: depressedmode (Dmytro Verbovyi)
