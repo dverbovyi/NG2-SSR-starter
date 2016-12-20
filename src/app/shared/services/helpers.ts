@@ -12,3 +12,7 @@ export class Helpers {
         return true;
     }
 }
+
+export function getLRUCache() {
+    return new Map();
+}

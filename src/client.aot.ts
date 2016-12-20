@@ -6,7 +6,7 @@ import './hooks/__workaround.browser'; // temporary until 2.1.1 things are patch
 import { enableProdMode } from '@angular/core';
 import { platformBrowser } from '@angular/platform-browser';
 
-import { MainModuleNgFactory } from './browser.module.ngfactory';
+import { MainModuleNgFactory } from '../aot/src/browser.module.ngfactory';
 
 import apiConfig from './environtments/prod';
 

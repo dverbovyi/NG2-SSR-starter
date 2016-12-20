@@ -3,15 +3,17 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
 import { TodoComponent } from './todo.component';
-import { ApiService } from '../shared/services';
+import { ApiService, ModelService } from '../shared/services';
 
 const TITLE: string = 'TODO component with prerender server data';
 
 const apiServiceStub = {
-    get: (resource: string) => {
-        return Observable.create((observer) => observer.complete());
-    }
-}
+    get: (resource: string) => Observable.create((observer) => observer.complete())
+};
+
+const modelServiceStub = {
+    get: (resource: string) => Observable.create((observer) => observer.complete())
+};
 
 describe('#Todo page', () => {
     let fixture: ComponentFixture<TodoComponent>,
@@ -22,7 +24,10 @@ describe('#Todo page', () => {
         return TestBed.configureTestingModule({
             schemas: [CUSTOM_ELEMENTS_SCHEMA],
             declarations: [TodoComponent],
-            providers: [{ provide: ApiService, useValue: apiServiceStub }]
+            providers: [
+                { provide: ApiService, useValue: apiServiceStub },
+                { provide: ModelService, useValue: modelServiceStub }
+            ]
         }).compileComponents().then(()=> {
             fixture = TestBed.createComponent(TodoComponent);
             fixture.detectChanges();

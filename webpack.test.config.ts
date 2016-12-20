@@ -86,15 +86,9 @@ export const TestWebpackConfig = {
                 test: /\.ts$/,
                 loader: 'awesome-typescript-loader',
                 query: {
-                    // use inline sourcemaps for "karma-remap-coverage" reporter
-                    sourceMap: false,
-                    inlineSourceMap: true,
+                    sourceMap: true,
                     compilerOptions: {
-
-                        // Remove TypeScript helpers to be injected
-                        // below by DefinePlugin
                         removeComments: true
-
                     }
                 },
                 exclude: [/\.e2e\.ts$/]
@@ -104,14 +98,9 @@ export const TestWebpackConfig = {
                 test: /\.ts$/,
                 loader: 'angular2-template-loader',
                 query: {
-                    // use inline sourcemaps for "karma-remap-coverage" reporter
-                    sourceMap: false,
-                    inlineSourceMap: true,
+                    sourceMap: true,
                     compilerOptions: {
-
-                        // Remove TypeScript helpers to be injected
-                        // below by DefinePlugin
-                        removeComments: true
+                        removeComments: true,
 
                     }
                 },
@@ -232,39 +221,4 @@ export const TestWebpackConfig = {
         clearImmediate: false,
         setImmediate: false
     }
-
 }
-
-
-// export const TestWebpackConfig = {
-//     devtool: 'inline-source-map',
-
-//     resolve: {
-//         extensions: ['', '.ts', '.js'],
-
-//         modules: [root('src'), 'node_modules']
-//     },
-
-//     module: {
-//         loaders: [
-//             {
-//                 test: /\.ts$/,
-//                 loaders: ['awesome-typescript-loader', 'angular2-template-loader']
-//             },
-//             {
-//                 test: /\.html$/,
-//                 loader: 'html'
-
-//             },
-//             {
-//                 test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
-//                 loader: 'null'
-//             },
-//             {
-//                 test: /\.css$/,
-//                 include: root('src'),
-//                 loader: 'raw'
-//             }
-//         ]
-//     }
-// }

@@ -2,7 +2,7 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ApiService, Helpers } from './services';
+import { ApiService, ModelService, Helpers } from './services';
 
 const MODULES = [
   // Do NOT include UniversalModule, HttpModule, or JsonpModule here
@@ -22,6 +22,7 @@ const COMPONENTS = [
 
 const PROVIDERS = [
   ApiService,
+  ModelService,
   Helpers
 ]
 

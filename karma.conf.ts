@@ -1,5 +1,7 @@
 import { TestWebpackConfig } from './webpack.test.config';
 
+
+
 module.exports = function (config) {
   var configuration = {
 
@@ -21,7 +23,7 @@ module.exports = function (config) {
      *
      * we are building the test environment in ./spec-bundle.js
      */
-    files: [{ pattern: './karma-test.shim.js', watched: false }],
+    files: [{ pattern: './karma-test.shim.js', included: true, watched: false }],
 
     /*
      * preprocess matching files before serving them to the browser
@@ -40,7 +42,7 @@ module.exports = function (config) {
       json: './coverage/coverage.json',
       html: './coverage/html'
     },
-    
+
     // Webpack please don't spam the console when running in karma!
     webpackMiddleware: { stats: 'errors-only' },
 
@@ -50,7 +52,7 @@ module.exports = function (config) {
      * possible values: 'dots', 'progress'
      * available reporters: https://npmjs.org/browse/keyword/karma-reporter
      */
-    reporters: ['mocha', 'coverage'],
+    reporters: ['mocha', 'coverage', 'remap-coverage'],
 
     // web server port
     port: 9876,

@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
 import { Todo } from './todo.schema'
-import { ApiService } from '../shared/services';
+import { ModelService } from '../shared/services';
 
 @Component({
   selector: 'todo',
@@ -12,14 +12,14 @@ export class TodoComponent implements OnInit {
 
   public todos: Todo[];
 
-  constructor(private service: ApiService) { }
+  constructor(private model: ModelService) { }
 
   ngOnInit() {
-    this.service
+    this.model
       .get('/api/todos')
       .subscribe(data => {
         this.todos = data;
-      });
+    });
   }
 
 }
