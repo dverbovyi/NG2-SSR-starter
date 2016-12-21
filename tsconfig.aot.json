@@ -24,7 +24,6 @@
   ],
   "angularCompilerOptions": {
     "debug": false,
-    "genDir": "aot",
     "skipMetadataEmit": true
   },
   "compileOnSave": false,

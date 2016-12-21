@@ -7,7 +7,7 @@
     "watch:test": "npm test -- --auto-watch --no-single-run",
     "clean:dist": "rimraf dist",
     "clean:coverage": "rimraf coverage",
-    "clean:aot": "rimraf aot",
+    "clean:aot": "rimraf **/*.ngfactory.ts **/*.css.shim.ts",
     "clean:all": "npm run clean:dist && npm run clean:aot && npm run clean:coverage",
     "build": "webpack  --progress",
     "build:dev": "npm run build",
