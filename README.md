@@ -67,6 +67,10 @@ To run tests in watch mode:
 
 * `npm run clean:aot` - remove ngc generated files 
 
+* `npm run clean:coverage` - remove coverage report folder
+
+* `npm run clean:all` - execute all clean-commands
+
 * `npm test` - run unit tests
 
 * `npm run watch:dev` - observe files changes and build artifacts using dev configuration;
