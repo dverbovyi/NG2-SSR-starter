@@ -1,5 +1,5 @@
 import { TestBed, ComponentFixture, async } from '@angular/core/testing';
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AppComponent } from './app.component';
 
 const HEADER: string = 'Welcome dudes!';
@@ -16,8 +16,8 @@ describe('#AppComponent', () => {
         }).compileComponents().then(() => {
             fixture = TestBed.createComponent(AppComponent);
             fixture.detectChanges();
-            instance = fixture.debugElement.componentInstance;
-            el = fixture.debugElement.nativeElement;
+            instance = fixture.componentInstance;
+            el = fixture.nativeElement;
         });
     }));
 

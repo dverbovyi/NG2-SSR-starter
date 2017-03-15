@@ -18,4 +18,4 @@ export function main() {
   return platformRef.bootstrapModuleFactory(MainModuleNgFactory);
 }
 
-main();
+main().catch(error => console.error(error));

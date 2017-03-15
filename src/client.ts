@@ -16,4 +16,4 @@ export function main() {
   return platformRef.bootstrapModule(MainModule);
 }
 
-main();
+main().catch(error => console.error(error));
