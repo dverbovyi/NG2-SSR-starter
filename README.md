@@ -22,6 +22,10 @@ build **DEV** configuration and start server
 	//or
 	npm run server:dev
 	
+build **PROD** configuration and start server
+
+	npm run server:prod
+	
 The application is available on **http://localhost:3000**.
 	
 ### Building atrifacts
