@@ -30,4 +30,4 @@ function requireAll(requireContext) {
 }
 
 // requires and returns all modules that match
-module.exportrs = requireAll(testContext);
+module.exports = requireAll(testContext);
